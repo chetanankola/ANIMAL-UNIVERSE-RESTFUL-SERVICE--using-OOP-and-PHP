@@ -1,0 +1,43 @@
+put this folder in /var/www/html folder
+
+and run ur apache.. on localhost
+
+Some pointers to run:
+
+Enable mod_rewrite module of the httpd.conf /etc/httpd/conf/httpd.conf 
+i.e remove the #, (uncomment it)
+
+If you are not using localhost, then change the localhost to your server ipaddress in "globalvar.php in /betterworks folder
+
+Ensure that there is .htaccess file present in /betterworks directory. (unhide it to see it), its there in zipped files already you wudnt need to change anything.
+
+
+It however should look like this:
+
+RewriteEngine on
+RewriteRule ^.*$ api/handler.php
+
+which means any request to betterworks directory should be redirected to handler.php file in api folder.
+
+
+
+
+
+Some simple ways to use the links are as follows:
+http://localhost/betterworks/animals/
+http://localhost/betterworks/animal/
+http://localhost/betterworks/animal
+http://localhost/betterworks/animals
+
+http://localhost/betterworks/
+
+http://localhost/betterworks/animals/herbivorous
+http://localhost/betterworks/animals/carnivore
+http://localhost/betterworks/animals/omnivorous
+http://localhost/betterworks/animals/omnivore
+http://localhost/betterworks/animals/herbivorous/cow
+http://localhost/betterworks/animals/herbivorous/dog
+
+
+In a Restful way , we show information in top down approach, i.e we only show necessary information till user asks for more..meanwhile providing
+links to more detailed information.
